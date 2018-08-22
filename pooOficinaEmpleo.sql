@@ -1,3 +1,4 @@
+
 CREATE TABLE Usuario(
 id_usuarios int not null auto_increment,
 nombreUsuarios nvarchar(50),
@@ -75,6 +76,7 @@ id_perfil int not null,
 id_nivel_educacion int not null,
 id_programa int not null,
 id_usuarios int not null,
+id_personas int not null,
 apellido nvarchar(50),
 dni int,
 edad int,
@@ -86,7 +88,8 @@ primary key(id_postulante),
 foreign key(id_perfil) references Perfil(id_perfil),
 foreign key(id_nivel_educacion) references NivelEducacion(id_nivel_educacion),
 foreign key(id_usuarios) references Usuario(id_usuarios),
-foreign key(id_programa) references Programa(id_programa));
+foreign key(id_programa) references Programa(id_programa)
+foreign Key (id_personas) references AbstractPersonas(id_personas));
 
 CREATE TABLE Curriculum(
 id_curriculum int not null auto_increment,
